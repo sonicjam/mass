@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PROJECTS | MASS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="keywords" content="淺井裕介, Asai Yusuke, MASS, Art Program, アートプログラム, 現代アート, Contemporary Art, オフィス">
+  <meta name="description" content="MASSは企業内に作家を招き公開制作を行う、企業向けアートプログラム。アートをつくり出す過程に価値を見出し、新しいインスピレーションとコミュニケーションが生まれる可能性を探り、社内が新たな価値を備えた場所になることを目指します。">
+  <meta property="og:description" content="MASSは企業内に作家を招き公開制作を行う、企業向けアートプログラム。アートをつくり出す過程に価値を見出し、新しいインスピレーションとコミュニケーションが生まれる可能性を探り、社内が新たな価値を備えた場所になることを目指します。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://mass-art.jp/projects/" />
+  <meta property="og:image" content="http://mass-art.jp/assets/img/ogp/ogp.png" />
+  <meta property="og:site_name" content="PROJECTS | MASS" />
+  <meta property="og:title" content="PROJECTS | MASS" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PROJECTS | MASS">
+  <meta name="twitter:description" content="MASSは企業内に作家を招き公開制作を行う、企業向けアートプログラム。アートをつくり出す過程に価値を見出し、新しいインスピレーションとコミュニケーションが生まれる可能性を探り、社内が新たな価値を備えた場所になることを目指します。">
+  <meta name="twitter:image" content="http://mass-art.jp/assets/img/ogp/ogp.jpg">
+  <link rel="stylesheet" href="/assets/css/html5reset-1.6.1.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" id="favicon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<!-- GA -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2093402-19', 'auto');
+</script>
+  <!-- webfont -->
+<script src="https://use.typekit.net/bfh3mjq.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script id="vs" type="x-shader/x-vertex">
+  
+  attribute vec3 position;
+  attribute float id;
+  
+  uniform mat4 mvpMatrix;
+  uniform float zKeisu;
+  uniform float time;
+  uniform float rx;
+  uniform float ry;
+  uniform float rz;
+  uniform vec3 rgb;
+  
+  varying float vGlay;
+  varying vec3 vRGB;
+  
+  void main() {
+    
+    vec3 pos = vec3(0.0);
+    
+    float radian = (id + time) * 0.05;
+    pos.z = position.z + sin(radian) * rz;
+    pos.x = position.x + (sin(radian) * rx * pos.z);
+    pos.y = position.y + (cos(radian) * ry * pos.z);
+    gl_Position = mvpMatrix * vec4(pos, 1.0);
+    
+    float fl = 800.0;
+    gl_PointSize = max(1.0, 0.1 * (fl / (fl / pos.z * 0.75)));
+    
+    vGlay = pow(clamp(abs(pos.z * zKeisu), 0.5, 2.0), 50.0);
+    vRGB = rgb;
+  }
+  
+</script>
+<script id="fs" type="x-shader/x-fragment">
+  
+  precision highp float;
+  
+  uniform float alpha;
+  
+  varying float vGlay;
+  varying vec3 vRGB;
+  
+  vec3 hsv2rgb(vec3 c) {
+    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+  }
+  
+  void main() {
+    
+    gl_FragColor = vec4(vRGB + vGlay, alpha);
+  
+  }
+  
+</script>
+</head>
+<body>
+  <div id="xPhoto">
+</div>
+
+<!-- HEADER -->
+<header id="xHeader" class="hide">
+  <h1 id="xHeaderTtl" class="txtHide">MASS</h1>
+  <ul id="xGnavi" class="massFont">
+    <li id="xGnaviMenu0" class="listDefault"><a class="aDefault noBr noLink" href="./">HOME</a></li>
+    <li id="xGnaviMenu1" class="listDefault"><a class="aDefault noBr noLink" href="./projects/">PROJECTS</a></li>
+    <li id="xGnaviMenu2" class="listDefault"><a class="aDefault noBr noLink" href="./about/">ABOUT</a></li>
+    <li id="xGnaviLang0" class="listDefault"><a class="aBasic noBr noLink" href="/">JP</a></li>
+    <li id="xGnaviLang1" class="listDefault"><a class="aBasic noBr noLink" href="/en/">EN</a></li>
+  </ul>
+</header>
+<!-- HEADER -->
+
+<!-- HOME -->
+<div id="xTop" class="hide">
+  <!-- vol.01 -->
+  <div id="xTopParts0" class="textBlack">
+    <div class="topVol0 massFont">Vol.</div>
+    <div class="topVol1 massFont bold">01</div>
+    <div class="topWorkTtl massFont bold noBr">この場所の声を聴く</div>
+    <div class="topTtl0 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="topTtl1 basicFont noBr bold">淺井 裕介</div>
+    <div class="topSubTtl massFont bold noBr">28-31.July 2015<br>at SONICJAM</div>
+    <a class="topDetail noLink" href="/01/"></a>
+  </div>
+  <!-- vol.01 -->
+  <!-- vol.02 -->
+  <div id="xTopParts1" class="textBlack">
+    <div class="topVol0 massFont">Vol.</div>
+    <div class="topVol1 massFont bold">02</div>
+    <div class="topWorkTtl massFont bold noBr">この場所の声を聴く</div>
+    <div class="topTtl0 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="topTtl1 basicFont noBr bold">淺井 裕介</div>
+    <div class="topSubTtl massFont bold noBr">21-28.October 2015<br>at SONICJAM</div>
+    <a class="topDetail noLink" href="/02/"></a>
+  </div>
+  <!-- vol.02 -->
+  <!-- vol.03 -->
+  <!-- vol.03 -->
+  <small id="xTopCopyright" class="txtHide topCopyright">&copy;SONICJAM/COPILOT All Rights Reserved.</small>
+</div>
+<!-- HOME -->
+
+<!-- PROJECTS -->
+<div id="xPjTop" class="hide">
+  <!-- vol.01 -->
+  <div id="xPjTopParts0" class="textBlack">
+    <div class="pjTopVol massFont bold">Vol.01</div>
+    <div class="pjTopWorkTtl massFont bold noBr">この場所の声を聴く</div>
+    <div class="pjTopTtl0 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="pjTopTtl1 basicFont noBr bold">淺井 裕介</div>
+    <div class="pjTopSubTtl massFont bold noBr">28-31.July 2015 at SONICJAM</div>
+    <a class="pjTopDetail noLink" href="/vol1/"></a>
+  </div>
+  <!-- vol.01 -->
+  <!-- vol.02 -->
+  <div id="xPjTopParts1" class="textBlack">
+    <div class="pjTopVol massFont bold">Vol.02</div>
+    <div class="pjTopWorkTtl massFont bold noBr">この場所の声を聴く</div>
+    <div class="pjTopTtl0 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="pjTopTtl1 basicFont noBr bold">淺井 裕介</div>
+    <div class="pjTopSubTtl massFont bold noBr">21-28.October 2015 at SONICJAM</div>
+    <a class="pjTopDetail noLink" href="/vol1/"></a>
+  </div>
+  <!-- vol.02 -->
+  <!-- vol.03 -->
+  <!-- vol.03 -->
+</div>
+<!-- PROJECTS -->
+
+<!-- PROJECTS詳細 -->
+<div id="xPjDetail" class="hide">
+  <!-- vol.01 -->
+  <!-- data-ycodeはyoutubeID -->
+  <!-- data-photoNumは写真数 -->
+  <div id="xPjDetailParts0" class="textBlack" data-ycode="6R2HFq00p4k" data-photoNum="12">
+    <div class="pjDetailVol massFont bold">Vol.01</div>
+    <div class="pjDetailTtl0 massFont bold noBr">この場所の声を聴く</div>
+    <div class="pjDetailTtl1 basicFont bold noBr">淺井 裕介</div>
+    <div class="pjDetailDate massFont bold noBr">28-31.July 2015<br>at SONICJAM</div>
+    <a class="pjDetailFb txtHide aImg" href="https://www.facebook.com/" target="_blank">facebook</a>
+    <a class="pjDetailTw txtHide aImg" href="https://twitter.com/" target="_blank">twitter</a>
+    <p class="pjDetailTxt0 basicFont canGetTxtHeight longText">MASSの第1回目は、株式会社ソニックジャム（SONICJAM）の1Fガラス張り会議室にて開催しました。外から丸見えになるガラスの会議室は、扉が閉じていてもある意味オープンな場所。そこにマスキングテープの青い植物が芽を出し、4日間のうちにみるみる伸びていきました。自然界の植物と同様、周囲の空気を敏感に感じ取りながら少しずつ形を変えて成長していったマスキングプラント。その間を、社員が作ったカラフルな鳥が自由に飛び回ります。</p>
+    <p class="pjDetailTxt1 basicFont canGetTxtHeight longText"><span class="textGray bold">淺井裕介</span>　“青を選んだのは、ここに似合う色だから。SONICJAMは自由な雰囲気があると同時に、発想することへの地盤がうまく作られているように感じます。なので、のびのびと制作しつつも「ものづくりに必要な余白の部分」を埋めきらないように気をつけましたね。「どこまで伸びちゃうんだろう？」「もっとこっちにもできそうだな」と、見た人が次の展開をフレキシブルに期待・予感でき、想像が刺激されるような作品を目指しました。</p>
+    <p class="pjDetailTxt2 basicFont canGetTxtHeight longText">ワークショップでは3回に渡ってみなさんに鳥を作ってもらいました。鳥は、植物がある程度の大きさになるとあわられ、植物を宿とし、また種の運び屋にもなります。みんなの手で作り上げた鳥が飛び回ることで、作品の世界に動きが与えられ、自由になっていきます。次々生まれてくるカラフルな鳥たちを、会社の外や駅まで飛ばしてみたくなりましたね。”</p>
+    <div class="pjDetailVideo" data-videoUrl=""></div>
+    
+    <div class="pjDetailSub0 massFont letterSpace2 bold noBr">ARTIST PROFILE</div>
+    <div class="pjDetailProfImg" data-imgUrl=""></div>
+    <p class="pjDetailProfName basicFont longText bold okBr">淺井 裕介(Yusuke Asai) <a href="http://www.arataniurano.com/" target="_blank">Website</a></p>
+    <p class="pjDetailProfTxt basicFont okBr longText">1981年 東京都生まれ。絵描き。テープ、ペン、土、埃、葉っぱ、道路用白線素材など身の回りの素材を用いて、キャンバスに限らず角砂糖の包み紙や紙ナプキンへのドローイング、泥や白線を使った巨大な壁画や地上絵のシリーズまで、あらゆる場所で奔放に絵画を制作する作家。<br>
+主な展覧会に「KITA! Japanese Artists Meet Indonesia (インドネシア／2008年)」「日常の喜び (水戸芸術館／2008年)」「福岡アジア美術トリエンナーレ2009 (福岡アジア美術館／2009年)」「アジア現代美術プロジェクトーCity_net Asia 2009 (ソウル市立美術館／2009年)」「ウォールアート・フェスティバル (インド／2010, 2011, 2012年)」「水・火・大地 (熊本現代美術館／2011年)」「MOTコレクション｜特別展示 淺井裕介 (東京都現代美術館／2011年)」「瀬戸内国際芸術祭2013 (犬島、岡山／2013年)」「越後妻有アートトリエンナーレ2015 (新潟県十日町市／2015年)」「淺井裕介 ー 絵の種 土の旅 (彫刻の森美術館／2015, 2016年)」</p>
+    <p class="pjDetailSub1 massFont letterSpace2 bold noBr">PHOTO GALLERY</p>
+  </div>
+  <!-- vol.01 -->
+  <!-- vol.02 -->
+  <div id="xPjDetailParts1" class="textBlack" data-ycode="SzSssEzwVS0" data-photoNum="12">
+    <div class="pjDetailVol massFont bold">Vol.02</div>
+    <div class="pjDetailTtl0 massFont bold noBr">この場所の声を聴く</div>
+    <div class="pjDetailTtl1 basicFont bold noBr">淺井 裕介</div>
+    <div class="pjDetailDate massFont bold noBr">21-28.October 2015<br>at SONICJAM</div>
+    <a class="pjDetailFb txtHide aImg" href="https://www.facebook.com/" target="_blank">facebook</a>
+    <a class="pjDetailTw txtHide aImg" href="https://twitter.com/" target="_blank">twitter</a>
+    <p class="pjDetailTxt0 basicFont canGetTxtHeight longText">第1回目から2ヶ月後の10月下旬、木々が色づく季節に再び淺井裕介氏が株式会社ソニックジャム（SONICJAM）を訪れ、今度は1Fラウンジスペースの広い壁をキャンバスに制作がはじまりました。真っ白い壁が、徐々にモチーフで埋め尽くされ、やがて大きな泥の壁画が完成。圧倒的なパワーを放つこの壁画は、世界中から集められた泥と、SONICJAMの社員が各々持参した泥で描かれました。vol.1で制作したマスキングプラントも会議室から収穫して再構成され、新しい命が吹き込まれました。</p>
+    <p class="pjDetailTxt1 basicFont canGetTxtHeight longText"><span class="textGray bold">淺井裕介</span>　“ものが作られている時って、エネルギーが放出されていると思うんです。だから会社の中で絵を描くという試みはすごくいい。あとは僕がいなくなったあと、エネルギーがどこまで持続するかが勝負。僕らアーティストは、根無し草というか、台風みたいな職業なんです。瞬間的に色々なことを感じ取って、あるいは考え抜いて放出していく『瞬間最大風速』のような仕事。そういう仕事をしている人が身近にいることは、社内の人にとっても新鮮だったんじゃないでしょうか。</p>
+    <p class="pjDetailTxt2 basicFont canGetTxtHeight longText">外に持ち出せるパネルに絵を描くのと、そこにある壁に描くのとは、特別感が全く違います。その場にきてその場で描くからこそダイレクトに気持ちが伝わると思っています。でも普段の制作方法と同様、この作品もいずれは消す予定です。ものを作る人たちはよく感じていると思いますが、本気で一生懸命作って、一番良くできたものをずっと持っていると、そこから先になかなか行けません。でも成果が消えてしまったら、それ以上のものを作らざるを得ない。次に作ったものがそれ以下だと、自分の評価自体も下がってしまいますから。そういう意味では、消すからこそ生まれてくるものがあると思えば、消すのもまた良しかなと。”</p>
+    <div class="pjDetailVideo" data-videoUrl=""></div>
+    
+    <div class="pjDetailSub0 massFont letterSpace2 bold noBr">ARTIST PROFILE</div>
+    <div class="pjDetailProfImg" data-imgUrl=""></div>
+    <p class="pjDetailProfName basicFont longText bold okBr">淺井 裕介(Yusuke Asai) <a href="http://www.arataniurano.com/" target="_blank">Website</a></p>
+    <p class="pjDetailProfTxt basicFont longText">1981年 東京都生まれ。絵描き。テープ、ペン、土、埃、葉っぱ、道路用白線素材など身の回りの素材を用いて、キャンバスに限らず角砂糖の包み紙や紙ナプキンへのドローイング、泥や白線を使った巨大な壁画や地上絵のシリーズまで、あらゆる場所で奔放に絵画を制作する作家。<br>
+主な展覧会に「KITA! Japanese Artists Meet Indonesia (インドネシア／2008年)」「日常の喜び (水戸芸術館／2008年)」「福岡アジア美術トリエンナーレ2009 (福岡アジア美術館／2009年)」「アジア現代美術プロジェクトーCity_net Asia 2009 (ソウル市立美術館／2009年)」「ウォールアート・フェスティバル (インド／2010, 2011, 2012年)」「水・火・大地 (熊本現代美術館／2011年)」「MOTコレクション｜特別展示 淺井裕介 (東京都現代美術館／2011年)」「瀬戸内国際芸術祭2013 (犬島、岡山／2013年)」「越後妻有アートトリエンナーレ2015 (新潟県十日町市／2015年)」「淺井裕介 ー 絵の種 土の旅 (彫刻の森美術館／2015, 2016年)」</p>
+    <p class="pjDetailSub1 massFont letterSpace2 bold noBr">PHOTO GALLERY</p>
+  </div>
+  <!-- vol.02 -->
+  <!-- vol.03 -->
+  <!-- vol.03 -->
+</div>
+<!-- PROJECTS詳細 -->
+
+<!-- ABOUT -->
+<div id="xAboutCover"></div>
+<div id="xAbout" class="hide basicFont canGetTxtHeight">
+  <p id="xAboutTtl" class="bold centerText longText longText">オフィスと現代アートの<br>新しい関係</p>
+  <p id="xAboutSubTtl" class="massFont bold centerText longText longText">The new relation between office<br> and contemporary art</p>
+  <p id="xAboutCap0" class="massFont bold longText noBr">PROJECT OBJECTIVE</p>
+  <p id="xAboutTxt0" class="bold longText">MASS（マス）は企業内に作家を招き公開制作をおこなう、企業向けアートプログラムです。<br>その制作過程において、社内コミュニケーションや新しいインスピレーションが生まれることを目的としています。<br>世の中に広く流通させる作品ではなく、アートをつくり出すアクティビティに価値を見出し、現代アートをより身近なものにしていく可能性を探ります。同時に社内が新たな価値を備えた場所になることを目指します。</p>
+  
+  <p id="xAboutCap1" class="massFont bold longText noBr">BACKGROUND</p>
+  <p id="xAboutTxt1" class="longText">「新しいインスピレーションを得る機会を、もっとオフィス内につくりたい」という想いがきっかけで発足したこのプログラム。普段デスクワーク中心で過ごしていると、アイデアのインプットがどうしても画面の中に頼りがちになってしまいます。発想の枠を広げようと、できるだけ外に出て色々なものを見たり体験したりするものの、繁忙期になるとその時間が取りづらいのも事実。それなら思いきってアートの制作工程の全てを社内に持ち込んでしまおう、というのが今回の発想の着眼点でした。<br><br>社員が作家のモノづくりに対する考え方に接したり、作家と同じ時間を共有し一緒に作品を制作し、互いに刺激を受けるものにできないだろうか…。現代アートをコミュニケーションツールとして捉え、アートという違った接点からの刺激は、日々の仕事やモノづくりでの新しいインスピレーションが生まれるきっかけになるのではないかと考えました。鑑賞や飾ることだけを目的としない、作家によるオフィス内での公開制作というスタイルにより、オフィスそのものが活性化していくことも考えています。</p>
+  
+  <p id="xAboutCap2" class="bold longText noBr">作家による公開制作と展示</p>
+  <p id="xAboutTxt2" class="longText">企業内でゼロから作品がつくられていく過程や制作工程を間近に目にすることで、作品やアートに対する考え方を肌で感じ取ることができます。</p>
+  
+  <p id="xAboutCap3" class="bold longText noBr">企業内スタッフの参加</p>
+  <p id="xAboutTxt3" class="longText">作品をつくるだけではなく、ワークショップを通して社員の方々も制作に参加します。一緒に作品をつくり上げる体験を通じて新しい刺激をもたらします。</p>
+  
+  <p id="xAboutCap4" class="bold longText noBr">インスピレーションを得る新しい接点</p>
+  <p id="xAboutTxt4" class="longText">アートのある環境で過ごすことにより新しい発想やアイデアの種を得る機会をつくり、オフィスがアートを通じて新たな価値を備えた空間として機能することを目指します。</p>
+  
+  <p id="xAboutCap5" class="bold longText noBr">現代アートの解釈や理解向上</p>
+  <p id="xAboutTxt5" class="longText">社員と作家がお互いに刺激を受けあい、異なる分野の「表現者」同士の対話を図ります。作品を鑑賞するだけではなく「アートを自身の言葉で語れる」能動的なアクションを促します。</p>
+  
+  <p id="xAboutAside0" class="massFont longText bold">PROJECT<br>NAME</p>
+  <p id="xAboutAside1" class="aboutTxt11 bold"><span class="aboutTxt11Ttl">MASS【マス】</span><br>※mass：集める・大衆の・美術用語のmass<br>
+ひとを「集める」新しい展示空間として、アートと相容れない言葉の表現として<br>
+マスにチャレンジするフォーマットとしての意図が込められています。</p>
+  <p id="xAboutAside2" class="massFont longText bold">MEMBERS</p>
+  <p id="xAboutAside3" class="noBr bold">プロデューサー</p>
+  <p id="xAboutAside4" class="noBr bold">アートディレクター</p>
+  <p id="xAboutAside5" class="noBr bold">ディレクター</p>
+  <p id="xAboutAside6" class="noBr bold">プログラム設定</p>
+  <p id="xAboutAside7" class="noBr bold">アドバイザー</p>
+  <p id="xAboutAside8" class="noBr bold">協力</p>
+  <p id="xAboutAside9" class="noBr bold"><span>:</span>村田 健</p>
+  <p id="xAboutAside10" class="noBr bold"><span>:</span>中川 博文</p>
+  <p id="xAboutAside11" class="noBr bold"><span>:</span>村岡 咲子</p>
+  <p id="xAboutAside12" class="noBr bold"><span>:</span>船橋 友久</p>
+  <p id="xAboutAside13" class="noBr bold"><span>:</span>染谷 卓郎</p>
+  <a id="xAboutAside14" class="aBasic noBr bold" href="http://www.arataniurano.com/" target="_blank"><span>:</span>ARATANIURANO</a>
+  <a id="xAboutAside15" class="aBasic noBr bold" href="http://www.sonicjam.co.jp/people/0001/" target="_blank">SONICJAM</a>
+  <a id="xAboutAside16" class="aBasic noBr bold" href="http://www.sonicjam.co.jp/people/0022/" target="_blank">SONICJAM</a>
+  <a id="xAboutAside17" class="aBasic noBr bold" href="http://www.sonicjam.co.jp/people/0025/" target="_blank">SONICJAM</a>
+  <a id="xAboutAside18" class="aBasic noBr bold" href="http://copilot.jp/artbuyer" target="_blank">COPILOT Inc.</a>
+  <a id="xAboutAside19" class="aBasic bold" href="http://tsca.jp/ja/" target="_blank">Takuro Someya Contemporary Art</a>
+  
+</div>
+<!-- ABOUT -->
+
+  <script src="/assets/js/libs.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

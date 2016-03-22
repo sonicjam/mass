@@ -1,0 +1,159 @@
+/* ------------------------------------------------ */
+/* 英語版CSS */
+/* ------------------------------------------------ */
+
+
+/* 長文共通 */
+.longText {
+  word-break: normal !important;
+}
+
+
+
+
+/* トップ */
+/* ------------------------------------------------ */
+
+
+
+/* プロジェクトトップ */
+/* ------------------------------------------------ */
+
+
+
+/* プロジェクト詳細 */
+/* ------------------------------------------------ */
+.pjDetailTtl0_0 {
+  font-size: 30px;
+  margin-top: 3px;
+}
+.pjDetailTtl0_1 {
+  font-size: 15px;
+  margin-left: 0px;
+}
+
+.pjDetailTtl1_0 {
+  font-size: 44px;
+}
+.pjDetailTtl1_1 {
+  font-size: 25px;
+}
+
+.pjDetailTxt0_0 {
+  font-size: 17px;
+}
+.pjDetailTxt0_1 {
+  font-size: 12px;
+}
+
+.pjDetailTxt1_0 {
+  font-size: 17px;
+}
+.pjDetailTxt1_1 {
+  font-size: 12px;
+}
+
+.pjDetailTxt2_0 {
+  font-size: 17px;
+}
+.pjDetailTxt2_1 {
+  font-size: 12px;
+}
+
+.pjDetailProfName_0 {
+  font-size: 20px;
+}
+
+.pjDetailProfTxt_0 {
+  font-size: 15px;
+}
+.pjDetailProfTxt_1 {
+  font-size: 12px;
+}
+
+
+/* ABOUT */
+/* ------------------------------------------------ */
+.aboutTtl_0 {
+  font-size: 50px;
+}
+.aboutTtl_0 br {
+  display: block;
+}
+.aboutTtl_1 {
+  font-size: 20px;
+}
+
+.aboutCap0_0, .aboutCap1_0 {
+  font-size: 24px
+}
+.aboutCap0_1, .aboutCap1_1 {
+  font-size: 14px
+}
+
+.aboutCap2_0, .aboutCap3_0, .aboutCap4_0, .aboutCap5_0 {
+  font-size: 17px
+}
+.aboutCap2_1, .aboutCap3_1, .aboutCap4_1, .aboutCap5_1 {
+  font-size: 13px
+}
+
+.aboutTxt0_0 {
+  font-size: 17px;
+}
+.aboutTxt0_1 {
+  font-size: 13px;
+}
+
+.aboutTxt1_0, .aboutTxt2_0, .aboutTxt3_0, .aboutTxt4_0, .aboutTxt5_0 {
+  font-size: 15px;
+}
+.aboutTxt1_1, .aboutTxt2_1, .aboutTxt3_1, .aboutTxt4_1, .aboutTxt5_1 {
+  font-size: 12px;
+}
+
+.aboutAside0_0, .aboutAside2_0 {
+  font-size: 15px;
+}
+.aboutAside0_1, .aboutAside2_1 {
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.aboutAside1_0 {
+  font-size: 13px;
+  letter-spacing: 1.25px;
+  line-height: 180%;
+}
+.aboutAside1_1 {
+  font-size: 8px;
+  letter-spacing: 1.25px;
+  line-height: 140%;
+}
+.aboutAside1_0 .aboutAside1Ttl {
+  font-size: 18px;
+}
+.aboutAside1_1 .aboutAside1Ttl {
+  font-size: 14px;
+}
+
+.aboutAside3_0, .aboutAside4_0, .aboutAside5_0, .aboutAside6_0, .aboutAside7_0, .aboutAside8_0, .aboutAside9_0, .aboutAside10_0, .aboutAside11_0, .aboutAside12_0, .aboutAside13_0, .aboutAside14_0, .aboutAside15_0, .aboutAside16_0, .aboutAside17_0, .aboutAside18_0, .aboutAside19_0 {
+  font-size: 15px;
+}
+.aboutAside3_1, .aboutAside4_1, .aboutAside5_1, .aboutAside6_1, .aboutAside7_1, .aboutAside8_1, .aboutAside9_1, .aboutAside10_1, .aboutAside11_1, .aboutAside12_1, .aboutAside13_1, .aboutAside14_1, .aboutAside15_1, .aboutAside16_1, .aboutAside17_1, .aboutAside18_1, .aboutAside19_1 {
+  font-size: 9px;
+}
+
+.aboutAside9_1 span, .aboutAside10_1 span, .aboutAside11_1 span, .aboutAside12_1 span, .aboutAside13_1 span, .aboutAside14_1 span {
+  display: none;
+}
+.aboutAside9_0 span, .aboutAside10_0 span, .aboutAside11_0 span, .aboutAside12_0 span, .aboutAside13_0 span, .aboutAside14_0 span {
+  margin-right: 10px;
+}
+
+.aboutSla_0 {
+  font-size: 15px;
+}
+.aboutSla_1 {
+  font-size: 9px;
+}

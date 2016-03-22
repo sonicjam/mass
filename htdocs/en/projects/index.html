@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PROJECTS | MASS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="keywords" content="Asai Yusuke, MASS, Art Program, Contemporary Art, Office">
+  <meta name="description" content="MASS is a unique art project which invites artists to perform in-house for companies. We value the process of making art within MASS project. ">
+  <meta property="og:description" content="MASS is a unique art project which invites artists to perform in-house for companies. We value the process of making art within MASS project. " />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://mass-art.jp/en/projects/" />
+  <meta property="og:image" content="http://mass-art.jp/assets/img/ogp/ogp.png" />
+  <meta property="og:site_name" content="PROJECTS | MASS" />
+  <meta property="og:title" content="PROJECTS | MASS" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PROJECTS | MASS">
+  <meta name="twitter:description" content="MASS is a unique art project which invites artists to perform in-house for companies. We value the process of making art within MASS project. ">
+  <meta name="twitter:image" content="http://mass-art.jp/assets/img/ogp/ogp.jpg">
+  <link rel="stylesheet" href="/assets/css/html5reset-1.6.1.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/en.css">
+  <link rel="shortcut icon" id="favicon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<!-- GA -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2093402-19', 'auto');
+</script>
+  <!-- webfont -->
+<script src="https://use.typekit.net/bfh3mjq.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script id="vs" type="x-shader/x-vertex">
+  
+  attribute vec3 position;
+  attribute float id;
+  
+  uniform mat4 mvpMatrix;
+  uniform float zKeisu;
+  uniform float time;
+  uniform float rx;
+  uniform float ry;
+  uniform float rz;
+  uniform vec3 rgb;
+  
+  varying float vGlay;
+  varying vec3 vRGB;
+  
+  void main() {
+    
+    vec3 pos = vec3(0.0);
+    
+    float radian = (id + time) * 0.05;
+    pos.z = position.z + sin(radian) * rz;
+    pos.x = position.x + (sin(radian) * rx * pos.z);
+    pos.y = position.y + (cos(radian) * ry * pos.z);
+    gl_Position = mvpMatrix * vec4(pos, 1.0);
+    
+    float fl = 800.0;
+    gl_PointSize = max(1.0, 0.1 * (fl / (fl / pos.z * 0.75)));
+    
+    vGlay = pow(clamp(abs(pos.z * zKeisu), 0.5, 2.0), 50.0);
+    vRGB = rgb;
+  }
+  
+</script>
+<script id="fs" type="x-shader/x-fragment">
+  
+  precision highp float;
+  
+  uniform float alpha;
+  
+  varying float vGlay;
+  varying vec3 vRGB;
+  
+  vec3 hsv2rgb(vec3 c) {
+    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+  }
+  
+  void main() {
+    
+    gl_FragColor = vec4(vRGB + vGlay, alpha);
+  
+  }
+  
+</script>
+</head>
+<body>
+  <div id="xPhoto">
+</div>
+
+<!-- HEADER -->
+<header id="xHeader" class="hide">
+  <h1 id="xHeaderTtl" class="txtHide">MASS</h1>
+  <ul id="xGnavi" class="massFont">
+    <li id="xGnaviMenu0" class="listDefault"><a class="aDefault noBr noLink" href="./">HOME</a></li>
+    <li id="xGnaviMenu1" class="listDefault"><a class="aDefault noBr noLink" href="./projects/">PROJECTS</a></li>
+    <li id="xGnaviMenu2" class="listDefault"><a class="aDefault noBr noLink" href="./about/">ABOUT</a></li>
+    <li id="xGnaviLang0" class="listDefault"><a class="aBasic noBr noLink" href="/">JP</a></li>
+    <li id="xGnaviLang1" class="listDefault"><a class="aBasic noBr noLink" href="/en/">EN</a></li>
+  </ul>
+</header>
+<!-- HEADER -->
+
+<!-- HOME -->
+<div id="xTop" class="hide">
+  <!-- vol.01 -->
+  <div id="xTopParts0" class="textBlack">
+    <div class="topVol0 massFont">Vol.</div>
+    <div class="topVol1 massFont bold">01</div>
+    <div class="topWorkTtl massFont bold noBr">Listen to the Place’s voice</div>
+    <div class="topTtl0 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="topTtl1 basicFont noBr bold">淺井 裕介</div>
+    <div class="topSubTtl massFont bold noBr">28-31.July 2015<br>at SONICJAM</div>
+    <a class="topDetail noLink" href="/01/"></a>
+  </div>
+  <!-- vol.01 -->
+  <!-- vol.02 -->
+  <div id="xTopParts1" class="textBlack">
+    <div class="topVol0 massFont">Vol.</div>
+    <div class="topVol1 massFont bold">02</div>
+    <div class="topWorkTtl massFont bold noBr">Listen to the Place’s voice</div>
+    <div class="topTtl0 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="topTtl1 basicFont noBr bold">淺井 裕介</div>
+    <div class="topSubTtl massFont bold noBr">21-28.October 2015<br>at SONICJAM</div>
+    <a class="topDetail noLink" href="/02/"></a>
+  </div>
+  <!-- vol.02 -->
+  <!-- vol.03 -->
+  <!-- vol.03 -->
+  <small id="xTopCopyright" class="txtHide topCopyright">&copy;SONICJAM/COPILOT All Rights Reserved.</small>
+</div>
+<!-- HOME -->
+
+<!-- PROJECTS -->
+<div id="xPjTop" class="hide">
+  <!-- vol.01 -->
+  <div id="xPjTopParts0" class="textBlack">
+    <div class="pjTopVol massFont bold">Vol.01</div>
+    <div class="pjTopWorkTtl massFont bold noBr">Listen to the Place’s voice</div>
+    <div class="pjTopTtl0 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="pjTopTtl1 basicFont noBr bold">淺井 裕介</div>
+    <div class="pjTopSubTtl massFont bold noBr">28-31.July 2015<br>at SONICJAM</div>
+    <a class="pjTopDetail noLink" href="/vol1/"></a>
+  </div>
+  <!-- vol.01 -->
+  <!-- vol.02 -->
+  <div id="xPjTopParts1" class="textBlack">
+    <div class="pjTopVol massFont bold">Vol.02</div>
+    <div class="pjTopWorkTtl massFont bold noBr">Listen to the Place’s voice</div>
+    <div class="pjTopTtl0 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="pjTopTtl1 basicFont noBr bold">淺井 裕介</div>
+    <div class="pjTopSubTtl massFont bold noBr">21-28.October 2015<br>at SONICJAM</div>
+    <a class="pjTopDetail noLink" href="/vol1/"></a>
+  </div>
+  <!-- vol.02 -->
+  <!-- vol.03 -->
+  <!-- vol.03 -->
+</div>
+<!-- PROJECTS -->
+
+<!-- PROJECTS詳細 -->
+<div id="xPjDetail" class="hide">
+  <!-- vol.01 -->
+  <!-- data-ycodeはyoutubeID -->
+  <!-- data-photoNumは写真数 -->
+  <div id="xPjDetailParts0" class="textBlack" data-ycode="6R2HFq00p4k" data-photoNum="12">
+    <div class="pjDetailVol massFont bold">Vol.01</div>
+    <div class="pjDetailTtl0 massFont bold noBr">Listen to the Place’s voice</div>
+    <div class="pjDetailTtl1 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="pjDetailDate massFont bold noBr">28-31.July 2015<br>at SONICJAM</div>
+    <a class="pjDetailFb txtHide aImg" href="https://www.facebook.com/" target="_blank">facebook</a>
+    <a class="pjDetailTw txtHide aImg" href="https://twitter.com/" target="_blank">twitter</a>
+    <p class="pjDetailTxt0 massFont canGetTxtHeight longText">The MASS first event was held in a meeting room surrounded by the windows in SONICJAM.  The room never looks closed because everyone can see the inside. Then, Blue plants drawn with masking tape sprout, and had grew up over 4days. Just like natural plants, the art masking plants matured while transforming into various shapes as if reaching to the air. Around the plants, colorful birds made by the employees fly joyfully.</p>
+    <p class="pjDetailTxt1 massFont canGetTxtHeight longText"><span class="textGray bold">YUSUKE ASAI</span> “The reason why I chose the bule is that I thought it suits the space. SONICJAM has a liberal atmosphere to develop ideas, so I worked on it for freely,  taking care not to fill the blank spaces for creativity.  I aimed for this art work make visitors wonder  how much far these plants would expand where they would go.”</p>
+    <p class="pjDetailTxt2 massFont canGetTxtHeight longText">“I had 3 times workshops, and let employees make birds made from masking tape. Birds appear in the plants when they grow a certain amount live in the branches, and carry the seeds. As the birds made by everyone fly around the room, the art work itself gains the ability to fly out into the world. As more and more birds are born,  I want to see them fly out at the office, or even to the station.”</p>
+    <div class="pjDetailVideo" data-videoUrl=""></div>
+    
+    <div class="pjDetailSub0 massFont letterSpace2 bold noBr">ARTIST PROFILE</div>
+    <div class="pjDetailProfImg" data-imgUrl=""></div>
+    <p class="pjDetailProfName massFont longText bold okBr">Yusuke Asai <a href="http://www.arataniurano.com/" target="_blank">Website</a></p>
+    <p class="pjDetailProfTxt massFont okBr longText">Born 1981 in Tokyo, Japan, A painter. His art works are not limited on a campus. He draws everywhere like, on sugar wrapping paper, on paper napkins, or on huge walls as well with using things surrounding us, such as masking tapes, pens, sands, dusts, sand leaves, limes, and etc.<br>
+Major exhibitions “KITA! Japanese Artists Meet Indonesia (Indonesia/2008)” “Happiness in Everyday Life (Art Tower Mito/2008)” “Fukuoka Asian Triennale 2009 (Fukuoka Asian Art Museum/2009)” “Asian contemporary art project - City net Asia 2009 (Seoul Museum of Art/2009)」 “Wall Art Festival (Indonesia/2010, 2011, 2012)」 “Water,Fire,Earth (Contemporary Art Museum, Kumamoto/2011)” “MOT Colection / Special Exhibition Yusuke Asai (Museum of Contemporary Art Tokyo／2011)” “Setouchi Triennale 2013 (Inujima, Okayama／2013)” “Triennale 2015 - Echigo-Tsumari Art Field (Tokamachi City Niigata/2015)” “Yusuke Asai - Seeds of Imagination, Journeys of Soil (/)The Hakone Open-Air Museum/2015, 2016)”</p>
+    <p class="pjDetailSub1 massFont letterSpace2 bold noBr">PHOTO GALLERY</p>
+  </div>
+  <!-- vol.01 -->
+  <!-- vol.02 -->
+  <div id="xPjDetailParts1" class="textBlack" data-ycode="SzSssEzwVS0" data-photoNum="12">
+    <div class="pjDetailVol massFont bold">Vol.02</div>
+    <div class="pjDetailTtl0 massFont bold noBr">Listen to the Place’s voice</div>
+    <div class="pjDetailTtl1 massFont bold noBr">YUSUKE ASAI</div>
+    <div class="pjDetailDate massFont bold noBr">21-28.October 2015<br>at SONICJAM</div>
+    <a class="pjDetailFb txtHide aImg" href="https://www.facebook.com/" target="_blank">facebook</a>
+    <a class="pjDetailTw txtHide aImg" href="https://twitter.com/" target="_blank">twitter</a>
+    <p class="pjDetailTxt0 massFont canGetTxtHeight longText">In November, two months after the first session, the trees began to turn red, and Yusuke Asai came to visit SONICJAM again. This time, he started drawing on the white wall of the lounge space on the first floor.<br>
+The white wall was covered in a motif, and in the end a large mud mural was finished. The mural was painted using soil from around the world, as well as that which Sonicjam employees had supplied.  Yusuke Asai also took the masking tapes off the wall which is done in vol.1 and reused in different shapes, and it gained new life.</p>
+    <p class="pjDetailTxt1 massFont canGetTxtHeight longText"><span class="textGray bold">Yusuke Asai</span>“It must a lot of energy are releasing while , someone is making stuff. So its challenging for me work in this company. it matter of how long dose this keep after I gone.  I think Artists are like duckweed. This job is like a typhoon. We need to catch lots of information in a moment or think it deep, and the release it as like the maximum instantaneous wind velocity. I guess its new experience for Sonicjam employee to be with that kinds of people.”</p>
+    <p class="pjDetailTxt2 massFont canGetTxtHeight longText">“It is way much different to draw on the panel and to draw on the wall which is never brought out. Drawing on the wall is special experience because I can communicate a passion to make things at the place and at the moment.”<br>
+“However, I will delete this work as usual, because if I keep the great works for a long time, I will never reach out, creators feel it often though. If the out put is gone, and then I forced myself to make better one again. The latest things are not exceed on the previous, my evaluation is also getting down. Thus, it’s not negative to delete the art work because its a chance to start something new.”</p>
+    <div class="pjDetailVideo" data-videoUrl=""></div>
+    
+    <div class="pjDetailSub0 massFont letterSpace2 bold noBr">ARTIST PROFILE</div>
+    <div class="pjDetailProfImg" data-imgUrl=""></div>
+    <p class="pjDetailProfName massFont longText bold okBr">Yusuke Asai <a href="http://www.arataniurano.com/" target="_blank">Website</a></p>
+    <p class="pjDetailProfTxt massFont okBr longText">Born 1981 in Tokyo, Japan, A painter. His art works are not limited on a campus. He draws everywhere like, on sugar wrapping paper, on paper napkins, or on huge walls as well with using things surrounding us, such as masking tapes, pens, sands, dusts, sand leaves, limes, and etc.<br>
+Major exhibitions “KITA! Japanese Artists Meet Indonesia (Indonesia/2008)” “Happiness in Everyday Life (Art Tower Mito/2008)” “Fukuoka Asian Triennale 2009 (Fukuoka Asian Art Museum/2009)” “Asian contemporary art project - City net Asia 2009 (Seoul Museum of Art/2009)」 “Wall Art Festival (Indonesia/2010, 2011, 2012)」 “Water,Fire,Earth (Contemporary Art Museum, Kumamoto/2011)” “MOT Colection / Special Exhibition Yusuke Asai (Museum of Contemporary Art Tokyo／2011)” “Setouchi Triennale 2013 (Inujima, Okayama／2013)” “Triennale 2015 - Echigo-Tsumari Art Field (Tokamachi City Niigata/2015)” “Yusuke Asai - Seeds of Imagination, Journeys of Soil (/)The Hakone Open-Air Museum/2015, 2016)”</p>
+    <p class="pjDetailSub1 massFont letterSpace2 bold noBr">PHOTO GALLERY</p>
+  </div>
+  <!-- vol.02 -->
+  <!-- vol.03 -->
+  <!-- vol.03 -->
+</div>
+<!-- PROJECTS詳細 -->
+<!-- ABOUT -->
+<div id="xAboutCover"></div>
+<div id="xAbout" class="hide massFont canGetTxtHeight">
+  <p id="xAboutTtl" class="bold centerText longText longText">The new relation between office<br> and contemporary art</p>
+  
+  <p id="xAboutCap0" class="bold longText noBr">PROJECT OBJECTIVE</p>
+  <p id="xAboutTxt0" class="bold longText">MASS is an unique art project which invites artists with good technique to perform in-house for companies.<br>
+Within the MASS project, it is aimed at teaching coworkers new values, and enhancing their communication by exposing them to the thought processes of the various artists invited.
+This project is not intended for producing commercial art works, but rather, finding out the value of the activity of making art, and helping the process to be more common to the daily life.<br>
+At the sametime, we try to make the office gain a new faction - a place for workers get new inspirations and values.</p>
+  
+  <p id="xAboutCap1" class="bold longText noBr">BACKGROUND</p>
+  <p id="xAboutTxt1" class="longText">This program is established for coworkers as an opportunity to gain new insight of the creative process in the office. In most cases, employees tend to rely on inspirational media, all collected from the computer screen. Since they are used to sitting in front of the desk for long time while they are working, this is the only inspirational outlet available, especially during the busy seasons. As such, these employees suggested alternative paths for inspiration should be held in-house. From that thought, this program was conceived.<br><br>“What form makes it possible to know the artist’s attitude toward the artworks and sharing the time for making art together ?” Within the MASS project, We think the contemporary art as a communication tool and then, the unique perception by art enhance the in-house daily activity and help coworkers gain new inspiration. The art project aimed not only for viewing and exhibiting, but rather, exposing people to Artists’ live performance in- house, enhance the activity in office.</p>
+  
+  <p id="xAboutCap2" class="bold longText noBr">“Performance and Exhibition in house”</p>
+  <p id="xAboutTxt2" class="longText">Coworkers profoundly understand the artwork and the concept by experience with being exposed by the thought processes of the artists invited.</p>
+  
+  <p id="xAboutCap3" class="bold longText noBr">”Participation by coworkers”</p>
+  <p id="xAboutTxt3" class="longText">This project requires coworkers to not only ask artists to make something for inspiration, but  also will allow them to directly join in the artistic processes in a variety of ways, such as attending workshops. In that process of grooving the arts, members and office space, works get motived to create their daily output.</p>
+  
+  <p id="xAboutCap4" class="bold longText noBr">”Opportunity for inspiration”</p>
+  <p id="xAboutTxt4" class="longText">By exposing coworkers be close to the art and offering them a opportunity for gaining better idea and inspiration, We aim to make the office gain a new fanction - a place for workers get new inspirations.</p>
+  
+  <p id="xAboutCap5" class="bold longText noBr">“Improving the literacy in arts”</p>
+  <p id="xAboutTxt5" class="longText">Artists invited and coworkers teach the different skills each other as creators.  MASS help people not only to view the artwork itself, but to be active as that they can talk “the words from the artwork”</p>
+  
+  <p id="xAboutAside0" class="longText bold">PROJECT<br>NAME</p>
+  <p id="xAboutAside1" class="aboutTxt11 bold"><Involving. Public Classes Available.<br>
+  mass as an art term.<br>MASS is art space for people involv,<br>
+  and it also implicates challenging format to the public common sense<br>toward the art as a playing word meaning which is not common with art.</p>
+  <p id="xAboutAside2" class="longText bold">MEMBERS</p>
+  <p id="xAboutAside3" class="noBr bold">Producer</p>
+  <p id="xAboutAside4" class="noBr bold">Art Director</p>
+  <p id="xAboutAside5" class="noBr bold">Director</p>
+  <p id="xAboutAside6" class="noBr bold">Planner</p>
+  <p id="xAboutAside7" class="noBr bold">Advisor</p>
+  <p id="xAboutAside8" class="noBr bold">Sponsorship</p>
+  <p id="xAboutAside9" class="noBr bold"><span>:</span>Ken Murata</p>
+  <p id="xAboutAside10" class="noBr bold"><span>:</span>Hirofumi Nakagawa</p>
+  <p id="xAboutAside11" class="noBr bold"><span>:</span>Sakiko Muraoka</p>
+  <p id="xAboutAside12" class="noBr bold"><span>:</span>Tomohisa Funahashi</p>
+  <p id="xAboutAside13" class="noBr bold"><span>:</span>Takuro Someya</p>
+  <a id="xAboutAside14" class="aBasic noBr bold" href="http://www.arataniurano.com/" target="_blank"><span>:</span>ARATANIURANO</a>
+  <a id="xAboutAside15" class="aBasic noBr bold" href="http://www.sonicjam.co.jp/people/0001/" target="_blank">SONICJAM</a>
+  <a id="xAboutAside16" class="aBasic noBr bold" href="http://www.sonicjam.co.jp/people/0022/" target="_blank">SONICJAM</a>
+  <a id="xAboutAside17" class="aBasic noBr bold" href="http://www.sonicjam.co.jp/people/0025/" target="_blank">SONICJAM</a>
+  <a id="xAboutAside18" class="aBasic noBr bold" href="http://copilot.jp/artbuyer" target="_blank">COPILOT Inc.</a>
+  <a id="xAboutAside19" class="aBasic bold" href="http://tsca.jp/ja/" target="_blank">Takuro Someya Contemporary Art</a>
+  
+</div>
+<!-- ABOUT -->
+
+  <script src="/assets/js/libs.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
